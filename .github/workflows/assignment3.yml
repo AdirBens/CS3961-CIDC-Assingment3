@@ -127,7 +127,7 @@ jobs:
       # Test nutrition-svc using PyTest
       - name: Test with pytest  # additionally use ruff or other lint checkers
         id: "run-tests"
-        run: pytest -v ./tests/assn3_tests.py > ./tests/assn3_test_results.txt
+        run: pytest -v ./tests/assn3_tests.py > /tmp/assn3_test_results.txt
 
       # Logging tests status
       - name: Log tests success
