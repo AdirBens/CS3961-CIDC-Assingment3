@@ -31,7 +31,7 @@ jobs:
       - name: Build and export docker nutrition-svc-image
         uses: docker/build-push-action@v4
         with:
-          context: ./nutrition-svc
+          context: .
           tags: nutrition-svc:latest
           outputs: type=docker, dest=/tmp/nutrition-svc-image.tar
 
@@ -90,13 +90,13 @@ jobs:
           docker load --input /tmp/nutrition-svc-image.tar
 
       # Check if nutrition-svc image is loaded
-      - name: check nutrition-svc-image is loaded
+      - name: Check nutrition-svc-image is loaded
         run: docker image ls
 
       # Run nutrition-svc container
       - name: Run nutrition-svc container
         id: "run-svc"
-        run: docker run -p 8000:8000 -d nutrition-svc-image
+        run: docker run -p 8000:8000 -d nutrition-svc
       - name: Check container is running
         run: docker ps
 
