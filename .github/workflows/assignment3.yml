@@ -140,7 +140,7 @@ jobs:
       - name: Log tests failed
         if: always()
         run: |
-          if ${{ steps.run-svc.outcome == 'success' && steps.run-tests.outcome == 'success'}}
+          if ${{ steps.run-svc.outcome == 'success' && steps.run-tests.outcome == 'failure'}}
           then
             echo "tests failed" >> /tmp/log.txt
           fi
