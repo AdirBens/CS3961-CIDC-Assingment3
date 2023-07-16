@@ -96,7 +96,7 @@ jobs:
       # Run nutrition-svc container
       - name: Run nutrition-svc container
         id: "run-svc"
-        run: docker run -p 8000:8000 -d nutrition-svc-image
+        run: docker run -p 8000:8000 -d nutrition-svc
       - name: Check container is running
         run: docker ps
 
@@ -192,7 +192,7 @@ jobs:
       # Run nutrition-svc container
       - name: Run nutrition-svc container
         id: "run-svc"
-        run: docker run -p 8000:8000 -d nutrition-svc-image
+        run: docker run -p 8000:8000 -d nutrition-svc
       - name: Check container is running
         run: docker ps
 
