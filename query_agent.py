@@ -12,9 +12,13 @@ def run_queries():
 
     for query in queries:
         dish_id = _post_dish(dish_name=query.strip())
-        dish_data = _get_dish_data(dish_id=dish_id)
 
-        print("{name} contains {cal} calories, {sodium} mgs of sodium, and {sugar} grams of sugar".format(**dish_data))
+        if dish_id > 0:
+            dish_data = _get_dish_data(dish_id=dish_id)
+            print("{name} contains {cal} calories, {sodium} mgs of sodium, and {sugar} grams of sugar".format(**dish_data))
+        else:
+            print("No Data found for dish with name: {name}.".format(name=query.strip()))
+
 
 
 def _post_dish(dish_name: str) -> int:
