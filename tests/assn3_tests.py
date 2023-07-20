@@ -1,5 +1,8 @@
 from TestUtils import RestApiAgent, Assertions
 
+"""
+TEST SHOULD FAILED
+"""
 
 def test_create_new_dishes():
     """
@@ -83,6 +86,8 @@ def test_add_already_exists_dish():
     Assertions.assert_return_value(response=response, returned_value=EXPECTED_RETURN_VALUE)
     Assertions.assert_status_code(response=response, status_code=POSSIBLE_SATUS_CODES)
 
+def test_assert_failure():
+    assert 1 == 0
 
 def test_create_meal():
     """
