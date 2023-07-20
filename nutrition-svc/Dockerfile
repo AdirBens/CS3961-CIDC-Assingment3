@@ -6,7 +6,6 @@ COPY . .
 RUN pip install requests
 RUN pip install flask
 RUN pip install flask_restful
-RUN pip install blabaldbsdfbsfbfdbfababfdbafdb
 
 EXPOSE 8000
 ENV FLASK_APP=app.py
